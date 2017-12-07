@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="scripts/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="theme-color" content="#008000">
+    <title>FFAI</title>
+
+    <!-- CSS  -->
+    <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
+    <link href="min/custom-min.css" type="text/css" rel="stylesheet" >
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+ 
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+ 
+</div>
+
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+            <a href="#" id="logo-container" class="brand-logo">CSC 4444</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#intro">Predict</a></li>
+                    <li><a href="#team">Top Players</a></li>
+
+                    <li><a href="https://github.com/ndugal6/Fantasy-Football" target="_blank">Download</a></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="#intro">Predict</a></li>
+                    <li><a href="#team">Top Players</a></li>
+                    <li><a href="https://github.com/ndugal6/Fantasy-Football" target="_blank">Download</a></li>
+                </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--Hero-->
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <h1 class="text_h center header cd-headline letters type">
+            <span>FantasyFootball</span> 
+            <span class="cd-words-wrapper waiting">
+                <b class="is-visible">A.I.</b>
+            </span>
+        </h1>
+        <p style="text-align:center;"><img src="img/ffbadge.png"></p>
+    </div>
+</div>
+
+<!--Intro and service-->
+<div id="intro" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+      <article>
+            <h1>Welcome to Fantasy Football AI</h1>
+            <p>For our group project, we designed and implemented an agent that will advise fantasy football players on how to set their fantasy lineup each week.  Fantasy football is a popular game, where people who participate in fantasy football leagues draft individual NFL players who they think will earn the most fantasy points each week. The players also have the option to trade any player of theirs with a player that was not drafted by anyone in the league on the free agent's list. When a fantasy player drafts his or her team, they draft more players than they can start each week. Those extra players occupy the bench spots. The bench consists of players on your team while the free agent list has players, not on anyone’s team.  Each week, coinciding with the NFL schedule, users select 9 players that they believe will have the highest amount of combined fantasy points form their entire team. Our agent uses available NFL statistics to predict the number of points each NFL player on the fantasy team will earn along with the predicted points of the top 50 free agents.  The fantasy points are awarded based on the individual's performance in each NFL game. Our group is interested in this topic because each of us knows at least one person who cares deeply about his/her fantasy team or has a team of our own. Every participant would like to see his/her team succeed. Most people compete against friends or family for fun, but for some, money is involved. Our agent would do the research for them, giving them a leg up on their competition.  If we can make our agent more accurate than the ones the user’s fantasy league prediction sites, like ESPN, already provide, we would be more reliable than the competitors.</p>
+            <p>Result of query below</p>
+            <!-- The below tag will be used to store the result of the SQL query once it is carried out -->
+            <div id="queryResult">?</div>
+            <!-- The below button has been associated by the onclick attribute to the testAjax() function-->
+            <button id="SQLTestInit" type="button" class="SQLTest-button"  onclick="testAjax()">Test SQL Query!</button></a>
+        </article>
+        <article>
+            <h1>PHP Testing</h1>
+            <form id="TestPHPForm" action="php/newPHP.php" method="post">
+                </br>
+                If you want to know the team a player is on, please enter their name here! </br>
+                Name: <input id="PHPTestInput" type="text" name="PlayerName" size="25" />
+
+                <button id="PHPSubmitTest" type="button" class="PHPSubmit-Test" onclick="testPHP()" value="Submit" name="submit" />Test PHP!</button> </br>
+                <div id="PHPSubmitResult">?</div>
+            </form>
+        </article>
+        <article>
+            <h1>Item Retrieval</h1>
+            <form id="TestPythonForm" action="scripts/team_list.py" method="post">
+                </br>
+                If you want to find a team's players, do it here! </br>
+                Team URL: <input id="PythonTestInput" type="text" name="TeamURL" size="75" /> </br>
+                Free Agent URL: <input id="PythonTestInput2" type="text" name="FreeAgentURL" size="75"/> </br>
+
+                <button id="PythonSubmitTest" type="button" class="PythonSubmit-Test" onclick="testPython()" value="Submit" name="submit" />Test Python!</button> </br>
+                <div id="PythonSubmitResult">?</div>
+            </form>
+        </article>
+    </section>
+    <div class="push"></div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Team-->
+<div class="section scrollspy" id="team">
+    <div class="container">
+        <h2 class="header text_b"> Top Fantasy Performers 2017</h2>
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/RusselWilson.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="http://games.espn.com/ffl/leaders">
+                        <span class="card-title activator grey-text text-darken-4">Russel Wilson <br/>
+                            <small><em><a class="red-text text-darken-1" href="#">279.4</a></em></small></span>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/AntonioBrown.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="http://games.espn.com/ffl/leaders">
+                        <span class="card-title activator grey-text text-darken-4">Antonio Brown<br/>
+                            <small><em><a class="red-text text-darken-1" href="#">273.6</a></em></small>
+                        </span>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/ToddGurley.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="http://games.espn.com/ffl/leaders">
+                        <span class="card-title activator grey-text text-darken-4">
+                            Todd Gurley II <br/>
+                            <small><em><a class="red-text text-darken-1" href="#">260.2</a></em></small></span>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card card-avatar">
+                    <div class="waves-effect waves-block waves-light">
+                        <img class="activator" src="img/CarsonWentz.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="http://games.espn.com/ffl/leaders">
+                        <span class="card-title activator grey-text text-darken-4">Carson Wentz<br/>
+                            <small><em><a class="red-text text-darken-1" href="#">254.5</a></em></small></span>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer id="contact" class="page-footer default_color scrollspy">
+    <div class="container">  
+        <div class="row">
+            <div class="col l6 s12">
+            <p style="text-align:center;">Sean Marino   Maxwell Reeser  Clayton Samson Nicholas Dugal  Jenna Meadors  Kristopher Oubre  Zack Robicheaux</p>
+            <div class="col l3 s12">
+                <ul>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+            <div style="text-align: center">
+            <a href="https://github.com/ndugal6/Fantasy-Football">
+
+            <img src="img/git.png" align="center"></a>
+            </div>
+                <ul>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright default_color">
+    </div>
+</footer>
+
+
+    <!--  Scripts-->
+    <script src="min/plugin-min.js"></script>
+    <script src="min/custom-min.js"></script>
+
+    </body>
+</html>
